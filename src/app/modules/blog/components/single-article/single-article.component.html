@@ -1,0 +1,44 @@
+
+<div
+  *ngIf="isAdmin && !isEditActive" 
+  class="d-flex justify-content-center">
+  <button 
+    (click)="editArticle()"
+    class="btn-primary m-4 p-3"
+  >Edit article</button>
+</div>
+<div *ngIf="isEditActive; else post">
+  <app-article-form
+    [article]="article"
+  ></app-article-form>
+</div>
+<ng-template #post>
+  <div class="m-3 post">
+    <p 
+      *ngIf="category" 
+      class="d-flex justify-content-center capitalize">
+        {{category}}
+    </p>
+    <div *ngIf="article">
+      <h1 class="heading m-1">{{ article.title }}</h1>
+
+      <p class="m-3 font-size-medium">{{ article.body }}</p>
+    </div>
+  </div>
+  <div 
+    *ngIf="comments.length"
+    class="m-4">
+    <h2 class="text-center">Comments</h2>
+    <div
+     *ngFor="let comment of comments"
+     class="comment-wrapper">
+      <p class="capitalize bold title">{{ comment.title }}</p> 
+      <p>{{ comment.description }}</p> 
+    </div>
+  </div>
+
+</ng-template>
+
+
+
+

@@ -1,0 +1,23 @@
+<div *ngIf="categories">
+  <button (click)="createNewCategory()" class="btn-primary p-3 mt-3">Create new category</button>
+  <h1
+    class="heading"
+  >CATEGORIES</h1>
+  <div class="posts">
+    <div
+      *ngFor="let category of categories.data"
+      class="post"
+      >
+        <h1 class="post-heading">{{category.name}}</h1> 
+        <p class="post-body"> {{category.description}} </p>
+        <a
+          [routerLink]="['/admin/categories', category.id]"
+        >See more
+        </a>
+    </div>
+  </div>
+  <app-pagination
+    [paginationLinks]="categories.links"
+    (paginationChange)="onPaginationChange($event)"
+  ></app-pagination>
+</div>

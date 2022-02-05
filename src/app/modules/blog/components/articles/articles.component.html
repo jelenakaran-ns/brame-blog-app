@@ -1,0 +1,21 @@
+
+<div *ngIf="articles">
+  <button *ngIf="isAdmin" (click)="createNew()" class="btn-primary p-3 mt-3">Create new post</button>
+  <h1
+    class="heading"
+  >Welcome to Brame blog</h1>
+  <div class="posts">
+    <div 
+      *ngFor="let article of articles.data"
+      class="post">
+      <app-article-container
+        [isAdmin]="isAdmin"
+        [article]="article"
+      ></app-article-container>
+    </div>
+  </div>
+  <app-pagination
+    [paginationLinks]="articles.links"
+    (paginationChange)="onPaginationChange($event)"
+  ></app-pagination>
+</div>

@@ -1,0 +1,38 @@
+
+body, html {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-darkest);
+  background-color: var(--primary-darker);
+}
+
+
+h1, h2, h3 {
+  font-family: 'Amatic SC', cursive;
+  color: var(--secondary-darkest);
+}
+
+.heading{ 
+  font-size: 4rem;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.capitalize {
+  text-transform:uppercase;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.font-size-medium{
+  font-size: 1.2rem;
+}
+
+.error-text{
+  color: var(--danger);
+  font-size: 0.8rem;
+}

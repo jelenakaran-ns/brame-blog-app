@@ -1,0 +1,27 @@
+
+<div   
+*ngIf="!isEditActive" 
+class="d-flex justify-content-center">
+  <button
+  (click)="editCategory()"
+  class="btn-primary m-4 p-3"
+  >Edit category</button>
+</div>
+
+<div *ngIf="isEditActive; else categoryView">
+  <app-category-form
+    [category]="category"
+  >
+  </app-category-form>
+</div>
+<ng-template #categoryView>
+  <div 
+    *ngIf="category"
+    class="m-3 post"
+    >
+    <h1 class="heading m-1">{{category.name}}</h1> 
+    <p class="m-3 font-size-medium"> {{category.description}}</p>
+
+   
+  </div>
+</ng-template>

@@ -1,0 +1,17 @@
+<div class="h-100 d-flex justify-content-center flex-direction-column align-items-center">
+  <button 
+    (click)="deleteToken()"
+    class="btn-primary p-3 m-3">
+    Logout
+  </button>
+  <header 
+    *ngFor="let link of links"
+    class="big-button"
+  >
+    <a 
+    [routerLink]="link.path"
+    > {{link.label}}</a>
+  </header>
+</div>
+
+<router-outlet></router-outlet>

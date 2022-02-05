@@ -1,0 +1,9 @@
+<div *ngIf="article">
+  <h1 class="post-heading"> {{article.title}}</h1> 
+  <p class="post-body"> {{article.body}} </p>
+  <a
+   [routerLink]="routeLink"
+   >
+    See more
+  </a>
+</div>

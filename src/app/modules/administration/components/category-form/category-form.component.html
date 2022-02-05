@@ -1,0 +1,45 @@
+
+<div class="d-flex justify-content-center flex-direction-column align-items-center m-4">
+
+  <form 
+  [formGroup]="categoryForm"
+  class="width-100 d-flex justify-content-center flex-direction-column align-items-center"
+  >
+  <div class="mb-3 form-group">
+    <input 
+      type="input"
+      class="form-field"
+      placeholder="Enter Category Name"
+      name="name"
+      id='name'
+      [formControl]="convertToFormControl(categoryForm.get('name'))"
+      required />
+    <label for="name" class="form-label">Category name</label>
+    <div 
+      *ngIf="nameError"
+      class="m-1 error-text"
+    >{{nameError}}</div>
+  </div>
+  <div class="mb-3 mt-3 form-group">
+    <textarea
+      class="width-100 mt-3 form-field"
+      id="description"
+      label="Body"
+      name="description"
+      placeholder="Enter description"
+      [formControl]="convertToFormControl(categoryForm.get('description'))"
+    ></textarea>
+    <label for="description" class="form-label">Description</label>
+    <div 
+      *ngIf="descriptionError"
+      class="m-1 error-text"
+      >{{descriptionError}}</div>
+    </div>
+  </form>
+  <button (click)="save()" class="btn-primary p-3 mt-3">Save</button>
+  <a 
+    (click)="cancel()"
+    class="p-3 m-2 mt-3">
+    Cancel
+  </a>
+</div>
